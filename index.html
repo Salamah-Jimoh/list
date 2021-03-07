@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact List</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        a{
+            color:black;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        </style>
+</head>
+<body>
+    <div class="container"></div>
+<h1 class="text-center text-success">Contacts</h1> 
+<input type="text" class="form-control" id="formInput" placeholder="Search Contacts">
+<ul class="list-unstyled list-group" id="myList">
+<li class="list-group-item list-group-item-success">A</li>
+    <li class="list-group-item go"><a href="#">Adam</a></li>
+   <li class="list-group-item go"> <a href="#">Ade</a></li>
+   <li class="list-group-item go"><a href="#">Aisha</a></li>
+            <li class="list-group-item go"><a href="#">Ajoke</a></li>
+
+<li class="list-group-item list-group-item-success">B</li>
+<li class="list-group-item go"><a href="#">Basheer</a></li>
+<li class="list-group-item go"> <a href="#">Bamu</a></li>
+<li class="list-group-item go"><a href="#">Bola</a></li>
+         <li class="list-group-item go"><a href="#">Batula</a></li>
+
+<li class="list-group-item list-group-item-success">C</li>
+<li class="list-group-item go"><a href="#">Cynthia</a></li>
+<li class="list-group-item go"> <a href="#">Caramel</a></li>
+<li class="list-group-item go"><a href="#">Candy</a></li>
+        
+
+</ul>
+<p class="text-success text-center">Developed by <a href="https://salamah.netlify.app">Salamah</a>
+</p>
+<script>
+   let formInput= document.querySelector('#formInput')
+    formInput.addEventListener('keyup', filterNames);
+    function filterNames(){
+        let filterValue= document.querySelector('#formInput').value.toUpperCase();
+        let ul=document.querySelector('#myList');
+        let li=document.querySelectorAll("li.go");
+        //looping
+        for(let i=0; i<li.length; i++){
+            let a=li[i].getElementsByTagName('a')[0];
+     if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+            li[i].style.display=""
+
+        }
+        else{
+            li[i].style.display="none"
+        }
+       
+    }
+}
+//tocheck
+var number="pain";
+var name="slamah"
+var get=number.indexOf(name);
+console.log(get)
+    </script>
+</body>
+</html>
